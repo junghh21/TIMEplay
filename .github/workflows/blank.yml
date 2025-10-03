@@ -38,6 +38,8 @@ jobs:
         cd TIME1   
         python -m pip install --upgrade pip        
         pip install -r requirements.txt
+        curl -L -o pandas_ta-0.3.02b.tar.gz https://www.pandas-ta.dev/assets/zip/pandas_ta-0.3.02b.tar.gz
+        pip install pandas_ta-0.3.02b.tar.gz
           
     - name: Run tests
       run: |                
