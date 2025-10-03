@@ -43,5 +43,6 @@ jobs:
           
     - name: Run tests
       run: |                
+        cd TIME1 
         python main.py &
         sleep 600
