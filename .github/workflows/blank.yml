@@ -16,9 +16,9 @@ jobs:
       PYTHONIOENCODING: utf-8
       PYTHONLEGACYWINDOWSSTDIO: utf-8
       PAT_VAR: ${{ vars.PAT }}
-      TEST_VAR: ${{ vars.TEST }}
-      PAT_SECRET: ${{ secrets.PAT }}
-      TEST_SECRET: ${{ secrets.TEST }}
+      #TEST_VAR: ${{ vars.TEST }}
+      #PAT_SECRET: ${{ secrets.PAT }}
+      #TEST_SECRET: ${{ secrets.TEST }}
     steps:     
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -28,7 +28,7 @@ jobs:
     - name: Install dependencies
       run: |
         echo "PAT from vars: $env:PAT_VAR"
-        echo "TEST from vars: $env:TEST_VAR"
+        #echo "TEST from vars: $env:TEST_VAR"
         git config --global user.name "junghh21"
         git config --global user.email "your@email.com"
         git config --unset-all http.https://github.com/.extraheader
