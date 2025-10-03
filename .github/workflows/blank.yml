@@ -24,7 +24,10 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: '3.11'  # or your preferred version  
-    
+        
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
     - name: Install dependencies
       run: |
         echo "PAT from vars: $env:PAT_VAR"
