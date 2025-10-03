@@ -23,7 +23,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.11'  # or your preferred version  
+        python-version: '3.12'  # or your preferred version  
         
     - name: Checkout TIME1
       run: |
@@ -37,10 +37,10 @@ jobs:
       run: |
         cd TIME1   
         python -m pip install --upgrade pip        
-        pip install numpy==1.23.5
+        #pip install numpy==1.23.5
         pip install -r requirements.txt
-        curl -L -o pandas_ta-0.3.02b.tar.gz https://www.pandas-ta.dev/assets/zip/pandas_ta-0.3.02b.tar.gz
-        pip install pandas_ta-0.3.02b.tar.gz
+        #curl -L -o pandas_ta-0.3.02b.tar.gz https://www.pandas-ta.dev/assets/zip/pandas_ta-0.3.02b.tar.gz
+        #pip install pandas_ta-0.3.02b.tar.gz
           
     - name: Run tests
       run: |                
