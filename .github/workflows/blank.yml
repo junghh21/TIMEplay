@@ -26,19 +26,21 @@ jobs:
         python-version: '3.11'  # or your preferred version  
         
     - name: Checkout TIME1
-      run: git clone https://<token>@github.com/junghh21/TIME1.git
+      run: |
+        echo secret PAT ${{ secrets.PAT }}
+        echo "PAT from vars: $env:PAT_VAR"
+        echo "arfqwe"
+        echo "TEST from vars: $env:TEST_VAR"
+        git clone https://<token>@github.com/junghh21/TIME1.git
       env:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.PAT }}
       
     - name: Install dependencies
       run: |
         echo "PAT from vars: $env:PAT_VAR"
         echo "arfqwe"
         echo "TEST from vars: $env:TEST_VAR"
-        git config --global user.name "junghh21"
-        git config --global user.email "your@email.com"
-        git config --unset-all http.https://github.com/.extraheader
-        git clone https://$env:PAT_VAR@github.com/junghh21/TIME1.git        
+   
         python -m pip install --upgrade pip        
         pip install -r requirements.txt
           
