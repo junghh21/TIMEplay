@@ -28,6 +28,7 @@ jobs:
     - name: Install dependencies
       run: |
         echo "PAT from vars: $env:PAT_VAR"
+        echo "arfqwe"
         #echo "TEST from vars: $env:TEST_VAR"
         git config --global user.name "junghh21"
         git config --global user.email "your@email.com"
