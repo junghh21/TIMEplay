@@ -35,15 +35,11 @@ jobs:
       
     - name: Install dependencies
       run: |
-        echo "PAT from vars: $env:PAT_VAR"
-        echo "arfqwe"
-        echo "TEST from vars: $env:TEST_VAR"
-   
+        cd TIME1   
         python -m pip install --upgrade pip        
         pip install -r requirements.txt
           
     - name: Run tests
-      run: |        
-        cd TIME1
+      run: |                
         python main.py &
         sleep 600
