@@ -45,5 +45,5 @@ jobs:
     - name: Run tests
       run: |                
         cd TIME1 
-        python main.py &
+        python main.py
         sleep 5
