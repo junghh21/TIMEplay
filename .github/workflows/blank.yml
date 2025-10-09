@@ -3,8 +3,8 @@ name: run MOE
 
 on:
   schedule:
-    - cron: '0 20 * * 1-5'  # Weekdays at 5:00 AM KST
-    - cron: '0 8 * * 1-5'   # Weekdays at 5:00 PM KST
+    - cron: '0 20 * * *'  # Weekdays at 5:00 AM KST
+    - cron: '0 8 * * *'   # Weekdays at 5:00 PM KST
   workflow_dispatch:
 
 jobs:
