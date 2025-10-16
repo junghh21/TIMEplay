@@ -1,0 +1,49 @@
+# This is a basic workflow to help you get started with Actions
+name: run MOE
+
+on:
+  schedule:
+    - cron: '5 20 * * *'  # Weekdays at 5:00 AM KST
+    - cron: '5 8 * * *'   # Weekdays at 5:00 PM KST
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60  # Just under 6 hours
+    environment: env
+    env:
+      PYTHONIOENCODING: utf-8
+      PYTHONLEGACYWINDOWSSTDIO: utf-8
+      PAT_VAR: ${{ vars.PAT }}
+      #TEST_VAR: ${{ vars.TEST }}
+      #PAT_SECRET: ${{ secrets.PAT }}
+      #TEST_SECRET: ${{ secrets.TEST }}
+    steps:     
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'  # or your preferred version  
+        
+    - name: Checkout TIME1
+      run: |
+        echo secret PAT ${{ secrets.PAT }}
+        echo "PAT from vars: $env:PAT_VAR"
+        echo "arfqwe"
+        echo "TEST from vars: $env:TEST_VAR"
+        git clone --branch mamba_moe_v2_mixsel https://${{ secrets.PAT }}@github.com/junghh21/TIME1.git
+      
+    - name: Install dependencies
+      run: |
+        cd TIME1   
+        python -m pip install --upgrade pip        
+        #pip install numpy==1.23.5
+        pip install -r requirements.txt
+        #curl -L -o pandas_ta-0.3.02b.tar.gz https://www.pandas-ta.dev/assets/zip/pandas_ta-0.3.02b.tar.gz
+        #pip install pandas_ta-0.3.02b.tar.gz
+          
+    - name: Run tests
+      run: |                
+        cd TIME1 
+        python main.py
+        sleep 5
