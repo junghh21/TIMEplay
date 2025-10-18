@@ -27,11 +27,11 @@ jobs:
         
     - name: Checkout TIME1
       run: |
-        echo secret PAT ${{ secrets.PAT }}
+        echo secret PAT2 ${{ secrets.PAT2 }}
         echo "PAT from vars: $env:PAT_VAR"
         echo "arfqwe"
         echo "TEST from vars: $env:TEST_VAR"
-        git clone --branch 8MambaMOE_v1 https://${{ secrets.PAT }}@github.com/junghh21/TIME1.git
+        git clone --branch 8MambaMOE_v1 https://${{ secrets.PAT2 }}@github.com/junghh21/TIME1.git
       
     - name: Install dependencies
       run: |
