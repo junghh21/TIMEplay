@@ -31,7 +31,7 @@ jobs:
         echo "PAT from vars: $env:PAT_VAR"
         echo "arfqwe"
         echo "TEST from vars: $env:TEST_VAR"
-        git clone --branch mamba_moe_v2_mixsel1 https://${{ secrets.PAT2 }}@github.com/junghh21/TIME1.git
+        git clone --branch mamba_moe_v2_mixsel1_excl https://${{ secrets.PAT2 }}@github.com/junghh21/TIME1.git
       
     - name: Install dependencies
       run: |
