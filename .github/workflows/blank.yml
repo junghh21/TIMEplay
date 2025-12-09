@@ -10,6 +10,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/junghh21/venv_time:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.PAT3 }}
     timeout-minutes: 60  # Just under 6 hours
     environment: env
     env:
@@ -20,10 +25,10 @@ jobs:
       #PAT_SECRET: ${{ secrets.PAT }}
       #TEST_SECRET: ${{ secrets.TEST }}
     steps:     
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.12'  # or your preferred version  
+    # - name: Set up Python
+    #   uses: actions/setup-python@v4
+    #   with:
+    #     python-version: '3.12'  # or your preferred version  
         
     - name: Checkout TIME1
       run: |
@@ -33,14 +38,14 @@ jobs:
         echo "TEST from vars: $env:TEST_VAR"
         git clone --branch 8MambaMOE_v1 https://${{ secrets.PAT2 }}@github.com/junghh21/TIME1.git
       
-    - name: Install dependencies
-      run: |
-        cd TIME1   
-        python -m pip install --upgrade pip        
-        #pip install numpy==1.23.5
-        pip install -r requirements.txt
-        #curl -L -o pandas_ta-0.3.02b.tar.gz https://www.pandas-ta.dev/assets/zip/pandas_ta-0.3.02b.tar.gz
-        #pip install pandas_ta-0.3.02b.tar.gz
+    # - name: Install dependencies
+    #   run: |
+    #     cd TIME1   
+    #     python -m pip install --upgrade pip        
+    #     #pip install numpy==1.23.5
+    #     pip install -r requirements.txt
+    #     #curl -L -o pandas_ta-0.3.02b.tar.gz https://www.pandas-ta.dev/assets/zip/pandas_ta-0.3.02b.tar.gz
+    #     #pip install pandas_ta-0.3.02b.tar.gz
           
     - name: Run tests
       run: |                
