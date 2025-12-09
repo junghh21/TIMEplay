@@ -14,7 +14,7 @@ jobs:
       image: ghcr.io/junghh21/venv_time:latest
       credentials:
         username: ${{ github.actor }}
-        password: ${{ secrets.PAT2 }}
+        password: ${{ secrets.PAT3 }}
     timeout-minutes: 60  # Just under 6 hours
     environment: env
     env:
