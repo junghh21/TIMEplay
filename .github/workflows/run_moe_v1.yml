@@ -2,9 +2,9 @@
 name: run MOE v1
 
 on:
-  schedule:
-    - cron: '0 20 * * *'  # Weekdays at 5:00 AM KST
-    - cron: '0 8 * * *'   # Weekdays at 5:00 PM KST
+  # schedule:
+  #   - cron: '0 20 * * *'  # Weekdays at 5:00 AM KST
+  #   - cron: '0 8 * * *'   # Weekdays at 5:00 PM KST
   workflow_dispatch:
 
 jobs:
