@@ -33,6 +33,9 @@ jobs:
         cd GATHER1 
         python main.py
         sleep 5
+        git add .
+        git commit -m "Automated data update"
+        git push
         cd ..
     # - name: Checkout TIME1
     #   run: |
