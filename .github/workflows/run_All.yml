@@ -32,11 +32,26 @@ jobs:
         git clone https://${{ secrets.PAT2 }}@github.com/junghh21/GATHER1.git 
         cd GATHER1 
         python main.py
-        sleep 5        
-    - name: Checkout TIME1
-      run: |
-        git clone --branch mamba_5H_v2_NG https://${{ secrets.PAT2 }}@github.com/junghh21/TIME1.git
-        cd TIME1 
-        python main.py
         sleep 5
+        cd ..
+    # - name: Checkout TIME1
+    #   run: |
+    #     git clone --branch 8MambaMOE_v1 https://${{ secrets.PAT2 }}@github.com/junghh21/TIME1.git
+    #     cd TIME1 
+    #     python main.py
+    #     sleep 5
+    #     git reset --hard && git checkout mamba_moe_v2_mixsel1_excl        
+    #     sleep 5
+    #     python main.py
+    #     sleep 5
+    #     git reset --hard && git checkout mamba_moe_v2_mixsel_excl_arg_mean2
+    #     sleep 5
+    #     python main.py
+    #     sleep 5
+    #     git reset --hard && git checkout mamba_5h_v1
+    #     sleep 5
+    #     python main.py
+    #     sleep 5
+    #     git reset --hard && git checkout mamba_5H_v2_NG
+    #     sleep 5
 
