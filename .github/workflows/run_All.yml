@@ -59,4 +59,5 @@ jobs:
         sleep 5
         git reset --hard && git checkout mamba_5H_v2_NG
         sleep 5
-
+        python main.py
+        sleep 5
