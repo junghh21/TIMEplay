@@ -39,6 +39,7 @@ jobs:
         git commit -m "Automated data update"
         git push
         cd ..
+      continue-on-error: true
     - name: Checkout TIME1
       run: |
         git clone --branch 8MambaMOE_v1 https://${{ secrets.PAT2 }}@github.com/junghh21/TIME1.git
