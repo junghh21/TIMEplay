@@ -29,7 +29,18 @@ jobs:
     #   uses: actions/setup-python@v4
     #   with:
     #     python-version: '3.12'  # or your preferred version  
-        
+    - name: Checkout GATHER1
+      run: |
+        git clone https://${{ secrets.PAT2 }}@github.com/junghh21/GATHER1.git 
+        cd GATHER1 
+        python main.py
+        sleep 5
+        git config user.email "you@example.com"
+        git config user.name "Your Name"
+        git add .
+        git commit -m "Automated data update"
+        git push
+        cd ..    
     - name: Checkout TIME1
       run: |
         echo secret PAT ${{ secrets.PAT2 }}
