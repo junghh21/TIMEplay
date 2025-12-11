@@ -3,7 +3,7 @@ name: run All
 
 on:
   schedule:
-    - cron: '25 20 * * *'  # Weekdays at 5:30 AM KST
+    - cron: '25 21 * * *'  # Weekdays at 6:30 AM KST
     - cron: '25 2 * * *'   # Weekdays at 11:30 AM KST
     - cron: '25 8 * * *'   # Weekdays at 5:30 PM KST
     - cron: '25 13 * * *'   # Weekdays at 10:30 PM KST
