@@ -65,5 +65,5 @@ jobs:
         git config user.email "you@example.com"
         git config user.name "Your Name"
         git add .
-        git commit -m "Automated data update"
+        git commit -m "train mamba NG 5h attn Actions"
         git push
